@@ -29,7 +29,10 @@ namespace RunDiary.Tests
         [TestMethod]
         public void RunnerEnsureCanHaveRuns()
         {
-            List<Run> list_of_runs = new List<Run>();
+            List<Run> list_of_runs = new List<Run>
+            {
+                new Run { },
+            }
         }
     }
 }
