@@ -23,5 +23,6 @@ namespace RunDiary.Models
         public string RunTimeUnits { get; set; }
         public string Photo { get; set; }
         public string DiaryEntry { get; set; }
+        public bool IsRace { get; set; }
     }
 }
