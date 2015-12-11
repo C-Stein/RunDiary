@@ -38,6 +38,7 @@ namespace RunDiary.Tests.Models
             mock_context.Setup(a => a.Runs).Returns(mock_run_set.Object);
         }
 
+        [TestInitialize]
         public void Initialize()
         {
             mock_context = new Mock<RDContext>();
