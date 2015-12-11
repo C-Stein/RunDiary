@@ -20,8 +20,6 @@ namespace RunDiary.Models
 
         // ICollection, IEnumerable, IQueryable
         public List<Run> Runs { get; set; }
-        public List<Race> Races { get; set; }
-        public List<Run> FavoriteRuns { get; set;}
 
     }
 }

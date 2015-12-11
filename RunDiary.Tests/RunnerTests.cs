@@ -31,8 +31,17 @@ namespace RunDiary.Tests
         {
             List<Run> list_of_runs = new List<Run>
             {
-                new Run { },
-            }
+                new Run { RunName = "neighborhood loop",
+                RunDistance = 3.5
+                },
+                new Run { RunName = "Turkey Trot",
+                RunDistance = 3.1
+                }
+            };
+            Runner a_runner = new Runner { Handle = "superFastGuy", Runs = list_of_runs };
+            List<Run> actual_runs = a_runner.Runs;
+            CollectionAssert.AreEqual(list_of_runs, actual_runs);
+
         }
     }
 }
