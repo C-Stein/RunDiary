@@ -2,7 +2,10 @@
 In-Progress Backend capstone for NSS
 
 ERD complete at http://www.gliffy.com/go/publish/9620271
+
 Calendar View Wireframe available at https://app.moqups.com/Tacilin/yFnmUN9crm/view 
+
+Run Entry Form Wireframe available at https://app.moqups.com/Tacilin/HCHBlyMiJu/view
 
 ##User Stories
 
