@@ -27,5 +27,20 @@ namespace RunDiary.Models
             //found_runs.Sort();
             return found_runs;
         }
+
+        public bool CreateRun(Runner runner1, String runName)
+        {
+            Run a_run = new Run { RunName = runName };
+            bool is_added = true;
+            try
+            {
+                Run added_run = _context.Runs.Add(a_run);
+                _context.SaveChanges();
+            } catch (Exception)
+            {
+                is_added = false;
+            }
+            return is_added;
+        }
     }
 }
