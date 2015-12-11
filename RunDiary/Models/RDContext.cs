@@ -6,7 +6,7 @@ using System.Web;
 
 namespace RunDiary.Models
 {
-    public class RDContext : DbContext
+    public class RDContext : ApplicationDbContext
     {
         public virtual DbSet<Runner> Runners { get; set; }
         public virtual DbSet<Run> Runs { get; set; }
