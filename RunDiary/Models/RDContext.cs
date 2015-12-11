@@ -9,6 +9,6 @@ namespace RunDiary.Models
     public class RDContext : DbContext
     {
         public virtual DbSet<Runner> Runners { get; set; }
-        public DbSet<Run> Runs { get; set; }
+        public virtual DbSet<Run> Runs { get; set; }
     }
 }

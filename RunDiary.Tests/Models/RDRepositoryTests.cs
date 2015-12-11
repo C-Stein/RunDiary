@@ -4,6 +4,7 @@ using RunDiary.Models;
 using Moq;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 
 namespace RunDiary.Tests.Models
 {
@@ -22,7 +23,7 @@ namespace RunDiary.Tests.Models
             mock_set.As<IQueryable<Runner>>().Setup(data => data.ElementType).Returns(data_source.ElementType);
             mock_set.As<IQueryable<Runner>>().Setup(data => data.GetEnumerator()).Returns(data_source.GetEnumerator());
 
-            mock_context.Setup(a => a.JitterUsers).Returns(mock_set.Object);
+            mock_context.Setup(a => a.Runners).Returns(mock_set.Object);
         }
 
         public void Initialize()
@@ -41,8 +42,16 @@ namespace RunDiary.Tests.Models
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void RDContextEnsureICanCreateInstance()
         {
+            RDContext context = mock_context.Object;
+            Assert.IsNotNull(context);
+        }
+
+        [TestMethod]
+        public void RDRepositoryEnsureICanCreateInstance()
+        {
+            Assert.IsNotNull(repository);
         }
     }
 }
