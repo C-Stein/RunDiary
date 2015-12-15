@@ -30,10 +30,10 @@ namespace RunDiary.Tests.Models
         private void ConnectMocksToDataStore(IEnumerable<Run> data_store)
         {
             var data_source = data_store.AsQueryable<Run>();
-            mock_set.As<IQueryable<Run>>().Setup(data => data.Provider).Returns(data_source.Provider);
-            mock_set.As<IQueryable<Run>>().Setup(data => data.Expression).Returns(data_source.Expression);
-            mock_set.As<IQueryable<Run>>().Setup(data => data.ElementType).Returns(data_source.ElementType);
-            mock_set.As<IQueryable<Run>>().Setup(data => data.GetEnumerator()).Returns(data_source.GetEnumerator());
+            mock_run_set.As<IQueryable<Run>>().Setup(data => data.Provider).Returns(data_source.Provider);
+            mock_run_set.As<IQueryable<Run>>().Setup(data => data.Expression).Returns(data_source.Expression);
+            mock_run_set.As<IQueryable<Run>>().Setup(data => data.ElementType).Returns(data_source.ElementType);
+            mock_run_set.As<IQueryable<Run>>().Setup(data => data.GetEnumerator()).Returns(data_source.GetEnumerator());
 
             mock_context.Setup(a => a.Runs).Returns(mock_run_set.Object);
         }
@@ -72,6 +72,7 @@ namespace RunDiary.Tests.Models
         [TestMethod]
         public void RDRepositoryEnsureICanCreateARun()
         {
+            
             List<Run> expected_runs = new List<Run>();
             ConnectMocksToDataStore(expected_runs);
             Runner runner1 = new Runner { Handle = "SuperFastGuy" };
@@ -86,11 +87,12 @@ namespace RunDiary.Tests.Models
         [TestMethod]
         public void RDRepositoryEnsureICanGetAllRuns()
         {
+            DateTime base_time = DateTime.Now;
             List<Run> expected_runs = new List<Run>
             {
-                new Run {RunName = "Neighborhood Loop", RunDistance = 3.5 },
+                new Run {RunName = "Neighborhood Loop", RunDistance = 3.5, RunDate = base_time.AddDays(-1) },
                  new Run {RunName = "Park", RunDistance = 1.5 },
-                  new Run {RunName = "Nashville Half", RunDistance = 13.1 },
+                  new Run {RunName = "Nashville Half", RunDistance = 13.1, RunDate = base_time.AddDays(-2) },
             };
             mock_run_set.Object.AddRange(expected_runs);
             ConnectMocksToDataStore(expected_runs);

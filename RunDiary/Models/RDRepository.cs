@@ -22,7 +22,7 @@ namespace RunDiary.Models
 
         public List<Run> GetAllRuns()
         {
-            var query = from Run in _context.Runs select Run;
+            var query = from run in _context.Runs select run;
             List<Run> found_runs = query.ToList();
             found_runs.Sort();
             return found_runs;
