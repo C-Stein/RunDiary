@@ -1,14 +1,29 @@
-﻿using System;
+﻿using RunDiary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Mvc;
 
 namespace RunDiary.Controllers
 {
-    public class RunDiaryController : ApiController
+    public class RunDiaryController : Controller
     {
+        public RDRepository Repo { get; set; }
+
+        public RunDiaryController() : base()
+        {
+            Repo = new RDRepository();
+        }
+
+        //GET: RunDiary
+        public ActionResult Calendar()
+        {
+            return View();
+        }
+
         // GET: api/RunDiary
         public IEnumerable<string> Get()
         {

@@ -260,6 +260,8 @@
     <Content Include="Views\RunDiary\Calendar.cshtml" />
     <Content Include="Views\RunDiary\AddRun.cshtml" />
     <Content Include="Views\RunDiary\Index.cshtml" />
+    <Content Include="Views\Shared\_RunDiary.cshtml" />
+    <Content Include="Views\Shared\_Nav.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
