@@ -1,5 +1,19 @@
-﻿@{
+﻿@model IEnumerable<RunDiary.Models.Run>
+@{
     Layout = "~/Views/Shared/_RunDiary.cshtml";
 }
 
 <h1>Here's your "Calendar!"</h1>
+
+
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="run">
+                <p>here it is</p>
+                @item.RunName
+            </div>
+        </div>
+    </div>
+}

@@ -1,5 +1,25 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_RunDiary.cshtml";
 }
 
+<h1>Add a Run</h1>
+<form>
+    <label for="runName">Run Name:</label>
+    <input type="text" name="runName" id="runName" />
+    <!-- run date use calendar drop down-->
+    <label for="runDistance">Run Distance:</label>
+    <input type="number" name="runDistance" id="runDistance" />
+    <label for="runTime">Time to Complete Run:</label>
+    <input type="text" name="runTime" id="runTime" />
+    <label for="runPlace">Place/Route of Run:</label>
+    <input type="text" name="runPlace" id="runPlace" />
+    <label for="photo">URL of Photo:</label>
+    <input type="text" name="photo" id="photo" />
+    <input type="checkbox" name="isRace" value="true" /> Is Race?
+    <label for="diaryEntry">Diary Entry: </label>
+    <textarea name="diaryEntry" id="diaryEntry"></textarea>
+    <button type="submit">Create New Run</button>
+    <button>Update Run</button>
+    <button>Delete Entry</button>
+</form>
 
