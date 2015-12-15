@@ -77,8 +77,31 @@ namespace RunDiary.Tests.Models
             Runner runner1 = new Runner { Handle = "SuperFastGuy" };
             string runName = "Neighborhood Loop";
             mock_run_set.Setup(j => j.Add(It.IsAny<Run>())).Callback((Run s) => expected_runs.Add(s));
-
+            //Act
             bool successful = repository.CreateRun(runner1, runName);
+            //Assert
+            Assert.AreEqual(1, repository.GetAllRuns().Count);
+        }
+
+        [TestMethod]
+        public void RDRepositoryEnsureICanGetAllRuns()
+        {
+            List<Run> expected_runs = new List<Run>
+            {
+                new Run {RunName = "Neighborhood Loop", RunDistance = 3.5 },
+                 new Run {RunName = "Park", RunDistance = 1.5 },
+                  new Run {RunName = "Nashville Half", RunDistance = 13.1 },
+            };
+            mock_run_set.Object.AddRange(expected_runs);
+            ConnectMocksToDataStore(expected_runs);
+            //Act
+            List<Run> actual_runs = repository.GetAllRuns();
+            expected_runs.Sort();
+            actual_runs.Sort();
+
+            Assert.IsNotNull(expected_runs[0].RunName);
+            Assert.IsNotNull(actual_runs[0].RunName);
+
         }
     }
 }

@@ -24,7 +24,7 @@ namespace RunDiary.Models
         {
             var query = from Run in _context.Runs select Run;
             List<Run> found_runs = query.ToList();
-            //found_runs.Sort();
+            found_runs.Sort();
             return found_runs;
         }
 
