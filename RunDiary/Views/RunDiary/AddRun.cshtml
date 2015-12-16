@@ -6,9 +6,15 @@
 <form>
     <label for="runName">Run Name:</label>
     <input type="text" name="runName" id="runName" />
-    <!-- run date use calendar drop down-->
+    <label for="date">Date of run: </label>
+    <input type="text" name="date" id="date">
     <label for="runDistance">Run Distance:</label>
     <input type="number" name="runDistance" id="runDistance" />
+    <label for="distanceUnits">Distance Units</label>
+    <select name="distanceUnits">
+        <option value="miles">Mi</option>
+        <option value="kilometers">K</option>
+    </select>
     <label for="runTime">Time to Complete Run:</label>
     <input type="text" name="runTime" id="runTime" />
     <label for="runPlace">Place/Route of Run:</label>

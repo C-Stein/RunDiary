@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/themes/base/datepicker.css")
+
 </head>
 <body>
     @Html.Partial("_Nav")
     <div>
         @RenderBody()
     </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/jquery-ui-1.11.4.js")
+    @Scripts.Render("~/Scripts/main.js")
 </body>
 </html>
