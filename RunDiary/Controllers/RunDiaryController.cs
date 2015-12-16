@@ -2,7 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Web.Http;
+using System.Web;
 
 //using System.Web.Http;
 using System.Web.Mvc;
@@ -24,14 +25,12 @@ namespace RunDiary.Controllers
             return View();
         }
 
-        [Authorize]
         public ActionResult Calendar()
         {
             List<Run> my_runs = Repo.GetAllRuns();
             return View(my_runs);
         }
 
-        [Authorize]
         public ActionResult AddRun()
         {
             return View();
@@ -50,9 +49,9 @@ namespace RunDiary.Controllers
         }
 
         // POST: api/RunDiary
-       // public void Post([FromBody]string value)
-       // {
-        //}
+          public void Post([FromBody]string value)
+      {
+         }
 
         // PUT: api/RunDiary/5
         //public void Put(int id, [FromBody]string value)
