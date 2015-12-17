@@ -1,17 +1,25 @@
 ﻿$("#date").datepicker();
 
 
+$(document).ready(function () {
+
+    // page is now ready, initialize the calendar...
+
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+    })
+
+});
 
 
 
-
-$("#addRun").on("click", function () {
+$("#addRun").on("click", function (e) {
     var runToAdd = {};
-
+    e.preventDefault();
     console.log("you clicked it!!");
 
     //grab values from form and store in object
-     runToAdd = {
+    runToAdd = {
         "runName": $("#runName").val(),
         "date": $("#date").val(),
         "runDistance": $("#runDistance").val(),
@@ -23,18 +31,21 @@ $("#addRun").on("click", function () {
         "diaryEntry": $("#diaryEntry").val()
     };
 
-     runToAdd = JSON.stringify(runToAdd);
+    runToAdd = JSON.stringify(runToAdd);
 
-     console.log(runToAdd);
+    console.log(runToAdd);
 
-     $.ajax({
-         url: "/api/AddRun",
-         method: "POST",
-         data: runToAdd
-     }).done(function (addedRun) {
-         console.log("addedRun", addedRun);
-     }).fail(function (xhr, status, error) {
-         deferred.reject(error);
+    $.ajax({
+        url: "/api/AddRun",
+        method: "POST",
+        contentType: "application/json;charset=utf-8",
+        data: $("#addRunForm").serialize(),
+        success: function (data) {
+            console.log("success", data);
+        },
+        error: function (error) {
+        console.log("error", error);
+        }
      });
 
      

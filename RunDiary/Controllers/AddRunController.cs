@@ -1,14 +1,21 @@
-﻿using System;
+﻿//using Microsoft.Owin;
+using RunDiary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Mvc;
 
 namespace RunDiary.Controllers
 {
     public class AddRunController : ApiController
+       
+
     {
+        private RDRepository repo = new RDRepository();
+
         // GET: api/AddRun
         public IEnumerable<string> Get()
         {
@@ -22,9 +29,20 @@ namespace RunDiary.Controllers
         }
 
         // POST: api/AddRun
-        public void Post([FromBody]string value)
+        public void Post(FormCollection collection)
         {
+            string nr = collection.GetValue("runName").AttemptedValue;
+            //Run newRun = new Run { RunName = runName, RunPlace = runPlace };
+            //repo.AddRun(myRun);
+
         }
+
+        /* 
+        public void PostRun (string runName)
+        {
+            repo.AddRun(runName);
+        }
+        */
 
         // PUT: api/AddRun/5
         public void Put(int id, [FromBody]string value)

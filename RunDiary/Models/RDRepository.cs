@@ -28,6 +28,14 @@ namespace RunDiary.Models
             return found_runs;
         }
 
+
+        public void AddRun(Run newRun)
+        {
+            _context.Runs.Add(newRun);
+            _context.SaveChanges();
+        }
+
+
         public bool CreateRun(Runner runner1, String runName)
         {
             Run a_run = new Run { RunName = runName };

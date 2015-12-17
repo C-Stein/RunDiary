@@ -49,14 +49,14 @@ namespace RunDiary.Controllers
         }
 
         // POST: api/RunDiary
-          public void Post([FromBody]string value)
-      {
+         public void Post([FromBody]string value)
+         {
          }
 
         // PUT: api/RunDiary/5
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
+        public void Put(int id, [FromBody]string value)
+        {
+        }
 
         // DELETE: api/RunDiary/5
         public void Delete(int id)
