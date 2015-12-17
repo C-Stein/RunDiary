@@ -20,15 +20,15 @@ $("#addRun").on("click", function (e) {
 
     //grab values from form and store in object
     runToAdd = {
-        "runName": $("#runName").val(),
-        "date": $("#date").val(),
-        "runDistance": $("#runDistance").val(),
-        "distanceUnits": $("#distanceUnits").val(),
-        "runTime": $("#runTime").val(),
-        "runPlace": $("#runPlace").val(),
-        "photo": $("#photo").val(),
-        "isRace": $("#isRace").val(),
-        "diaryEntry": $("#diaryEntry").val()
+        RunName: $("#runName").val(),
+        RunDate: $("#date").val(),
+        runDistance: $("#runDistance").val(),
+        distanceUnits: $("#distanceUnits").val(),
+        runTime: $("#runTime").val(),
+        RunPlace: $("#runPlace").val(),
+        photo: $("#photo").val(),
+        isRace: $("#isRace").val(),
+        diaryEntry: $("#diaryEntry").val()
     };
 
     runToAdd = JSON.stringify(runToAdd);
@@ -39,7 +39,7 @@ $("#addRun").on("click", function (e) {
         url: "/api/AddRun",
         method: "POST",
         contentType: "application/json;charset=utf-8",
-        data: $("#addRunForm").serialize(),
+        data: runToAdd,
         success: function (data) {
             console.log("success", data);
         },

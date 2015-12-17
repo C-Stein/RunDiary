@@ -29,11 +29,11 @@ namespace RunDiary.Controllers
         }
 
         // POST: api/AddRun
-        public void Post(FormCollection collection)
+        public void Post(Run newRun)
         {
-            string nr = collection.GetValue("runName").AttemptedValue;
+            //string nr = collection.GetValue("runName").AttemptedValue;
             //Run newRun = new Run { RunName = runName, RunPlace = runPlace };
-            //repo.AddRun(myRun);
+            repo.AddRun(newRun);
 
         }
 
