@@ -22,18 +22,20 @@ $("#addRun").on("click", function (e) {
     runToAdd = {
         RunName: $("#runName").val(),
         RunDate: $("#date").val(),
-        runDistance: $("#runDistance").val(),
-        distanceUnits: $("#distanceUnits").val(),
-        runTime: $("#runTime").val(),
+        RunDistance: $("#runDistance").val(),
+        DistanceUnits: $("#distanceUnits").val(),
+        RunTime: $("#runTime").val(),
         RunPlace: $("#runPlace").val(),
-        photo: $("#photo").val(),
-        isRace: $("#isRace").val(),
-        diaryEntry: $("#diaryEntry").val()
+        Photo: $("#photo").val(),
+        IsRace: $("#isRace").val(),
+        DiaryEntry: $("#diaryEntry").val()
     };
 
-    runToAdd = JSON.stringify(runToAdd);
+    if(runToAdd.RunDate > "1/1/0001") {
+        runToAdd = JSON.stringify(runToAdd);
 
-    console.log(runToAdd);
+        console.log(runToAdd);
+        console.log(date, $("#date").val());
 
     $.ajax({
         url: "/api/AddRun",
@@ -44,9 +46,12 @@ $("#addRun").on("click", function (e) {
             console.log("success", data);
         },
         error: function (error) {
-        console.log("error", error);
+            console.log("error", error);
         }
-     });
+    });
+} else {
+       alert("You MUST enter in a date in order to add a run");
+}
 
      
 });

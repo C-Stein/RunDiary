@@ -16,7 +16,7 @@ namespace RunDiary.Models
         [Required]
         public string RunName { get; set; }
         public string RunPlace { get; set; }
-        [Required]
+        //[Required]
         public DateTime RunDate { get; set; }
         public double RunDistance { get; set; }
         public string DistanceUnits { get; set; }
