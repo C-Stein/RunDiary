@@ -31,10 +31,7 @@ namespace RunDiary.Controllers
         // POST: api/AddRun
         public void Post(Run newRun)
         {
-            //string nr = collection.GetValue("runName").AttemptedValue;
-            //Run newRun = new Run { RunName = runName, RunPlace = runPlace };
             repo.AddRun(newRun);
-
         }
 
         /* 
@@ -52,6 +49,9 @@ namespace RunDiary.Controllers
         // DELETE: api/AddRun/5
         public void Delete(int id)
         {
+            var query = from run in _context.Runs select run where runID == id;
+            //Run runToDelete = find the run with matching id
+            repo.DeleteRun(runToDelete);
         }
     }
 }

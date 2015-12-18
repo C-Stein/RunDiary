@@ -3,7 +3,9 @@
 }
 
 <h1>Add a Run</h1>
-<form method="POST" action="/api/AddRun" id="addRunForm">
+<form id="addRunForm">
+    <!-- Invisible ID line -->
+    <input type="number" id="id" />
     <label for="runName">Run Name:</label>
     <input type="text" name="runName" id="runName" />
     <label for="date">Date of run: </label>
@@ -26,6 +28,6 @@
     <textarea name="diaryEntry" id="diaryEntry"></textarea>
     <button type="submit" id="addRun">Create New Run</button>
     <button>Update Run</button>
-    <button>Delete Entry</button>
+    <button id="deleteRun">Delete Entry</button>
 </form>
 

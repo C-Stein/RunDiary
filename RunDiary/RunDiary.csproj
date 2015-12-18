@@ -206,6 +206,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Main.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -337,6 +338,7 @@
     <Content Include="fullcalendar-2.5.0\demos\php\get-events.php" />
     <Content Include="fullcalendar-2.5.0\demos\php\get-timezones.php" />
     <Content Include="fullcalendar-2.5.0\demos\php\utils.php" />
+    <None Include="Properties\PublishProfiles\RunDiary.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

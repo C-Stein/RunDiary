@@ -35,6 +35,12 @@ namespace RunDiary.Models
             _context.SaveChanges();
         }
 
+        public void DeleteRun(Run DeleteRun)
+        {
+            _context.Runs.Remove(DeleteRun);
+            _context.SaveChanges();
+        }
+
 
         public bool CreateRun(Runner runner1, String runName)
         {
