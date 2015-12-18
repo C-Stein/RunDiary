@@ -55,3 +55,7 @@ $("#addRun").on("click", function (e) {
 
      
 });
+
+
+//how to select calendar dates
+//$('*[data-date="2015-11-30"]');
