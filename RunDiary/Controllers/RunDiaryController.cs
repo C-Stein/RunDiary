@@ -36,6 +36,13 @@ namespace RunDiary.Controllers
             return View();
         }
 
+        public ActionResult EditRun(int id)
+        {
+            var run = Repo.GetRun(id);
+            return View(run);
+        }
+
+
 
     }
 }

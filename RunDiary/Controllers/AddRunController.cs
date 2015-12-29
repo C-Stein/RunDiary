@@ -49,9 +49,9 @@ namespace RunDiary.Controllers
         // DELETE: api/AddRun/5
         public void Delete(int id)
         {
-            var query = from run in _context.Runs select run where runID == id;
+            //var query = from run in _context.Runs select run where runID == id;
             //Run runToDelete = find the run with matching id
-            repo.DeleteRun(runToDelete);
+           // repo.DeleteRun(runToDelete);
         }
     }
 }

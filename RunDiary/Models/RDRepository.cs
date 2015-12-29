@@ -28,6 +28,10 @@ namespace RunDiary.Models
             return found_runs;
         }
 
+        public Run GetRun(int id)
+        {
+            return _context.Runs.SingleOrDefault(r => r.RunID == id);
+        }
 
         public void AddRun(Run newRun)
         {

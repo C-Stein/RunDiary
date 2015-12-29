@@ -389,10 +389,12 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\RunDiary\Calendar.cshtml" />
-    <Content Include="Views\RunDiary\AddRun.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Run.cshtml" />
     <Content Include="Views\RunDiary\Index.cshtml" />
     <Content Include="Views\Shared\_RunDiary.cshtml" />
     <Content Include="Views\Shared\_Nav.cshtml" />
+    <Content Include="Views\RunDiary\AddRun.cshtml" />
+    <Content Include="Views\RunDiary\EditRun.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

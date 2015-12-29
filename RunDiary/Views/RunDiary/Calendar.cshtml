@@ -3,7 +3,8 @@
     Layout = "~/Views/Shared/_RunDiary.cshtml";
 }
 
-<h1>Here's your "Calendar!"</h1>
+<h1>Here's your Calendar!</h1>
+<p>Click on the name of a run to read and/or edit info for that run</p>
 
 
 @foreach (var item in Model)
@@ -11,9 +12,9 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="run">
-                @item.RunID
-                @item.RunName 
+                @Html.ActionLink(item.RunName, "EditRun", new { id = item.RunID })
                 @item.RunDate.ToString("M")
+                
             </div>
         </div>
     </div>

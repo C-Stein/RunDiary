@@ -63,7 +63,7 @@ $("#deleteRun").on("click", function () {
         url: "/api/AddRun/" + id,
         method: "DELETE",
         contentType: "application/json;charset=utf-8",
-        data: runToAdd,
+        //data: runToAdd,
         success: function (data) {
             console.log("success", data);
         },

@@ -1,0 +1,30 @@
+﻿@model RunDiary.Models.Run
+
+
+
+<fieldset>
+    <legend>Address</legend>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.RunID)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.RunName)
+        @Html.ValidationMessageFor(model => model.RunName)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.RunPlace)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.RunPlace)
+        @Html.ValidationMessageFor(model => model.RunPlace)
+    </div>
+
+   
+
+    <p>
+        <inputtype ="submit" value="Save" />
+    </p>
+</fieldset>
+
