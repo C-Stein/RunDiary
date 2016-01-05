@@ -52,6 +52,27 @@ namespace RunDiary.Controllers
             return View(run);
         }
 
+        [HttpPut]
+        public ActionResult EditRun(int id, Run newRun)
+        {
+            var run = Repo.GetRun(id);
+            Repo.DeleteRun(run);
+            return View();
+        }
+
+        public ActionResult DeleteRun(int id)
+        {
+            var run = Repo.GetRun(id);
+            return View(run);
+        }
+
+        //[HttpDelete]
+        public ActionResult RunDeleted (Run run)
+        {
+            //var run = Repo.GetRun(id);
+            Repo.DeleteRun(run);
+            return View();
+        }
 
 
     }

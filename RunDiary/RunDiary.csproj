@@ -396,6 +396,8 @@
     <Content Include="Views\RunDiary\AddRun.cshtml" />
     <Content Include="Views\RunDiary\EditRun.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\RunDiary\DeleteRun.cshtml" />
+    <Content Include="Views\RunDiary\RunDeleted.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
