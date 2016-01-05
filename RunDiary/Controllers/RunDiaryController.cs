@@ -33,7 +33,17 @@ namespace RunDiary.Controllers
 
         public ActionResult AddRun()
         {
-            return View();
+            Run model = new Run();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Calendar(Run newRun)
+        {
+            
+           Repo.AddRun(newRun);
+            List<Run> my_runs = Repo.GetAllRuns();
+            return View(my_runs);
         }
 
         public ActionResult EditRun(int id)

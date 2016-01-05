@@ -34,12 +34,6 @@ namespace RunDiary.Controllers
             repo.AddRun(newRun);
         }
 
-        /* 
-        public void PostRun (string runName)
-        {
-            repo.AddRun(runName);
-        }
-        */
 
         // PUT: api/AddRun/5
         public void Put(int id, [FromBody]string value)
